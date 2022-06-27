@@ -1,3 +1,5 @@
+import Link from "../../node_modules/next/link"
+
 type Props = {
   postItem: PostItem
 }
@@ -8,10 +10,12 @@ type PostListProps = {
 function PostItemComponent({ postItem }: Props) {
   return (
     <li>
-      <a href={`/post/${postItem.id}`}>
-        <h2>{postItem.title}</h2>
-        <p>{postItem.summary}</p>
-      </a>
+      <Link href={`/post/${postItem.id}`}>
+        <a>
+          <h2>{postItem.title}</h2>
+        </a>
+      </Link>
+      <p>{postItem.summary}</p>
     </li>
   )
 }
