@@ -1,6 +1,8 @@
-function Post(props) {
+function Post({ data }) {
   return (
-    <div dangerouslySetInnerHTML={{__html: props.data.htmlContent}}></div>
+    <div className="container">
+      <div dangerouslySetInnerHTML={{__html: data.htmlContent}}></div>
+    </div>
   )
 }
 

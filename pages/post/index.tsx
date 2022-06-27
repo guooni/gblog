@@ -20,7 +20,7 @@ function PostItemComponent({ postItem }: Props) {
 function PostList({ list }: PostListProps) {
   const postList = list.map((e) => <PostItemComponent key={e.id} postItem={e} />)
   return (
-    <ul>
+    <ul >
       {postList}
     </ul>
   )
