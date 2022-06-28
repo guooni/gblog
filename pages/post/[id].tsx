@@ -7,7 +7,8 @@ function Post({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  const res = await fetch(`${process.env.HTTP_BASE_API}/posts/id?id=${context.params.id}`)
+
+  const res = await fetch(`${process.env.API_BASE_URL}/posts/id?id=${context.params.id}`)
 
   const json = await res.json()
 

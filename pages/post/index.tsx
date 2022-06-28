@@ -31,11 +31,11 @@ function PostList({ list }: PostListProps) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`${process.env.HTTP_BASE_API}/posts/?pageNumber=1&pageSize=10`)
+  const res = await fetch(`${process.env.BASE_URL}/api/posts`)
 
   const json = await res.json()
 
-  return { props: { list: json.data.list } }
+  return { props: { list:json.list } }
 }
 
 export default PostList
