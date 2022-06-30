@@ -7,7 +7,7 @@ type Props = {
 export default function PostItemComponent({ postItem }: Props) {
   return (
     <li>
-      <Link href={`/post/${postItem.id}`}>
+      <Link href={`/post/${postItem.utitle}`}>
         <a>
           <h2>{postItem.title}</h2>
         </a>

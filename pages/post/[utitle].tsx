@@ -1,14 +1,15 @@
 function Post({ data }) {
+  const html = (data && data.htmlContent) ? <div dangerouslySetInnerHTML={{__html: data.htmlContent}}></div> : ''
   return (
     <div className="container">
-      <div dangerouslySetInnerHTML={{__html: data.htmlContent}}></div>
+      {html}
     </div>
   )
 }
 
 export async function getServerSideProps(context) {
 
-  const res = await fetch(`${process.env.API_BASE_URL}/posts/id?id=${context.params.id}`)
+  const res = await fetch(`${process.env.BASE_URL}/api/posts/${context.params.utitle}`)
 
   const json = await res.json()
 
